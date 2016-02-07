@@ -1,3 +1,5 @@
+package Utils;
+
 import models.Ride;
 import models.User;
 
@@ -22,12 +24,13 @@ public class DataGenerator {
         rides.add(new Ride(3,"c","a",200,1,new Date(),2));
 
 
-        User user2 = new User(2,"Mariusz","Lamprecht","ss@ss.pl","12345",rides);
+        User user2 = new User(2,"Mariusz","Lamprecht","123@123.pl","12345");
+       // User user2 = new User(2,"Mariusz","Lamprecht","ss@ss.pl","12345",rides);
 
         users.add(user);
         users.add(user2);
 
-        DataBase db = new DataBase(users);
+        DataBase db = new DataBase(users, rides);
     }
 
 }

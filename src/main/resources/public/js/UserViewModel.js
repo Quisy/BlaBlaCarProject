@@ -12,6 +12,7 @@ const loginUrl = (login, password) => `/user/login/${login}/pw/${password}`;
                 if (confirm("asfasfas")) {
                    this.isLogged(true);
                    alert(this.login());
+                   console.log(this.login());
                 }
 
                         $.getJSON(loginUrl(this.login(), this.password()), (data) => {

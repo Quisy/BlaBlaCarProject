@@ -26,9 +26,6 @@
             <div class="collapse navbar-collapse" id="panelLogin">
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
-                        <p>Cos::
-                            <input data-bind="value: login" />
-                        </p>
                         <input type="text" class="form-control" data-bind="value: login" placeholder="Email">
                         <input type="password" class="form-control" data-bind="value: password" placeholder="Hasło">
                     </div>
@@ -41,10 +38,49 @@
 
     </nav>
 
+
+        <!--<ul class="list-group" data-bind="foreach: rides, visible: rides().length > 0">-->
+            <!--<li>-->
+                <!--<input data-bind="value: from" />-->
+            <!--</li>-->
+        <!--</ul>-->
+
+    <div class="container">
+            <h2>Przejazdy</h2>
+            <p>Przejazdy</p>
+        <div class="container" id="allRides">
+            <button type="submit" class="btn btn-info" data-bind="click: getAll">GetRides</button>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Od</th>
+                    <th>Do</th>
+                    <th>Data</th>
+                    <th>Cena</th>
+                    <th>Wolne miejsca</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody data-bind="foreach: rides">
+                <tr>
+                    <td data-bind="text: from"></td>
+                    <td data-bind="text: to"></td>
+                    <td data-bind="text: date"></td>
+                    <td data-bind="text: price"></td>
+                    <td data-bind="text: seats"></td>
+                    <td> <button type="submit" class="btn btn-info" data-bind="click: getAll">GetRides</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <script src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
     <script src='js/knockout-3.4.0.js'></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/RideViewModel.js"></script>
     <script src="js/UserViewModel.js"></script>
+
 
 </body>
 

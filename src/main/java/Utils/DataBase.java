@@ -1,3 +1,6 @@
+package Utils;
+
+import models.Ride;
 import models.User;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,20 +19,25 @@ public class DataBase {
 
     @XmlElement(name = "User")
     private List<User> users;
+    @XmlElement(name = "Ride")
+    private List<Ride> rides;
 
     public DataBase()
     {
 
     }
 
-    public DataBase(List<User> users){
+    public DataBase(List<User> users, List<Ride> rides){
         this.users = users;
+        this.rides = rides;
         DataManager.save(this);
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
+
+
+    public List<User> getUsers() {return users;}
+
+    public List<Ride> getRides() {return this.rides;}
 
     public void setUsers(List<User> users) {
         this.users = users;
