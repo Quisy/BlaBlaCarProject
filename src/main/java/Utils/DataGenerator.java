@@ -19,9 +19,9 @@ public class DataGenerator {
     public static void GenerateData()
     {
         User user = new User(1,"Mariusz","Lamprecht","ss@ss.pl","12345");
-        rides.add(new Ride(1,"a","B",200,1,new Date(),3));
-        rides.add(new Ride(2,"c","B",200,1,new Date(),1));
-        rides.add(new Ride(3,"c","a",200,1,new Date(),2));
+        rides.add(new Ride(1,"a","B",200,user,new Date(),3));
+        rides.add(new Ride(2,"c","B",200,user,new Date(),1));
+        rides.add(new Ride(3,"c","a",200,user,new Date(),2));
 
 
         User user2 = new User(2,"Mariusz","Lamprecht","123@123.pl","12345");

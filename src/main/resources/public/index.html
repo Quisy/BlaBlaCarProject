@@ -39,22 +39,18 @@
     </nav>
 
 
-        <!--<ul class="list-group" data-bind="foreach: rides, visible: rides().length > 0">-->
-            <!--<li>-->
-                <!--<input data-bind="value: from" />-->
-            <!--</li>-->
-        <!--</ul>-->
 
-    <div class="container">
+    <div class="container" id="allRides">
             <h2>Przejazdy</h2>
             <p>Przejazdy</p>
-        <div class="container" id="allRides">
+        <div class="container"  >
             <button type="submit" class="btn btn-info" data-bind="click: getAll">GetRides</button>
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>Od</th>
                     <th>Do</th>
+                    <th>Właściciel</th>
                     <th>Data</th>
                     <th>Cena</th>
                     <th>Wolne miejsca</th>
@@ -65,10 +61,15 @@
                 <tr>
                     <td data-bind="text: from"></td>
                     <td data-bind="text: to"></td>
+                    <td>
+                        <p data-bind="with: owner">
+                            <span data-bind="text: firstName"> </span>  <span data-bind="text: lastName"> </span>
+                        </p>
+                    </td>
                     <td data-bind="text: date"></td>
                     <td data-bind="text: price"></td>
                     <td data-bind="text: seats"></td>
-                    <td> <button type="submit" class="btn btn-info" data-bind="click: getAll">GetRides</button></td>
+                    <td><button type="submit" class="btn btn-info" data-bind="click: $parent.removeTask">Zamów miejsce</button></td>
                 </tr>
                 </tbody>
             </table>

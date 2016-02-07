@@ -5,6 +5,7 @@ const getRidesUrl = () => `/rides/getAll`;
         this.id = ko.observable(data.id);
         this.from = ko.observable(data.from);
         this.to = ko.observable(data.to);
+        this.owner = ko.observable(data.owner);
         this.date = ko.observable(data.date);
         this.price = ko.observable(data.price);
         this.seats = ko.observable(data.seats);
@@ -24,6 +25,9 @@ const getRidesUrl = () => `/rides/getAll`;
         }
 
 
+        this.joinRide = function(){
+
+        }
 
 
     }

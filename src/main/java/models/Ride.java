@@ -24,8 +24,8 @@ public class Ride {
     @XmlAttribute
     private final double price;
 
-    @XmlAttribute
-    private final int ownerID;
+    @XmlElement
+    private final User owner;
 
     @XmlAttribute
     private final Date date;
@@ -44,18 +44,18 @@ public class Ride {
         this.from = "a";
         this.to = "b";
         this.price = 200;
-        this.ownerID = 1;
+        this.owner = null;
         this.date = new Date();
         this.seats = 3;
         this.users = null;
     }
 
-    public Ride(int id, String from, String to, double price, int owner, Date date, int seats) {
+    public Ride(int id, String from, String to, double price, User owner, Date date, int seats) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.price = price;
-        this.ownerID = owner;
+        this.owner = owner;
         this.date = date;
         this.seats = seats;
 
@@ -83,8 +83,8 @@ public class Ride {
         return price;
     }
 
-    public int getOwner() {
-        return ownerID;
+    public User getOwner() {
+        return owner;
     }
 
     public Date getDate() {
