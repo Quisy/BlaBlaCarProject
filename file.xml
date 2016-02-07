@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Users id="2" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345">
+    <rides id="1" from="a" to="B" price="200.0" owner="1" date="2016-01-30T15:24:14.218+01:00" seats="3">
+        <users id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+        <users id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+    </rides>
+    <rides id="2" from="c" to="B" price="200.0" owner="1" date="2016-01-30T15:24:14.218+01:00" seats="1">
+        <users id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+        <users id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+    </rides>
+    <rides id="3" from="c" to="a" price="200.0" owner="1" date="2016-01-30T15:24:14.218+01:00" seats="2">
+        <users id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+        <users id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+    </rides>
+</Users>

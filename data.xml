@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataBase>
+    <User id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+    <User id="2" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345">
+        <Ride id="1" from="a" to="B" price="200.0" ownerID="1" date="2016-02-07T12:40:12.309+01:00" seats="3"/>
+        <Ride id="2" from="c" to="B" price="200.0" ownerID="1" date="2016-02-07T12:40:12.309+01:00" seats="1"/>
+        <Ride id="3" from="c" to="a" price="200.0" ownerID="1" date="2016-02-07T12:40:12.309+01:00" seats="2"/>
+    </User>
+</DataBase>
