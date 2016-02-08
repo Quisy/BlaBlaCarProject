@@ -35,11 +35,18 @@ public class DataBase {
 
 
 
-    public List<User> getUsers() {return users;}
+    public List<User> getUsers()
+    {
+        return users;
+    }
 
-    public List<Ride> getRides() {return this.rides;}
+    public List<Ride> getRides()
+    {
+        return this.rides;
+    }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<User> users)
+    {
         this.users = users;
     }
 }

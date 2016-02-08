@@ -20,8 +20,7 @@ public class DataManager {
             JAXBContext jaxbContext = JAXBContext.newInstance(DataBase.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            DataBase db = (DataBase) jaxbUnmarshaller.unmarshal(dbFile);
-            return db;
+            return (DataBase) jaxbUnmarshaller.unmarshal(dbFile);
         } catch (JAXBException e) {
             e.printStackTrace();
             return null;

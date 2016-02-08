@@ -3,26 +3,28 @@ const loginUrl = (login, password) => `/user/login/${login}/pw/${password}`;
 
     function UserViewModel(){
 
-            this.login = ko.observable("bhbhbh");
-            this.password = ko.observable("xxx");
-            this.isLogged = false;
+            this.currentUserLogin = ko.observable(sessionStorage.getItem('login'));
+            this.login = ko.observable();
+            this.password = ko.observable();
+            this.isLogged = ko.observable(checkIfLogged());
+            this.isNotLogged = ko.observable(!checkIfLogged());
 
 
             this.loginUser = function(){
-                if (confirm("asfasfas")) {
-                   this.isLogged(true);
-                   alert(this.login());
-                   console.log(this.login());
-                }
-
                         $.getJSON(loginUrl(this.login(), this.password()), (data) => {
-                            if(data.isSuccess){
-                                //sessionStorage.setItem(password, this.password);
-                                //sessionStorage.setItem(login, this.login);
-                                this.isLogged(true);
-                                window.location.reload();
-                            }
+                                var result = data;
+                                if (result == true)
+                                {
+                                    sessionStorage.setItem('password', this.password());
+                                    sessionStorage.setItem('login', this.login());
+                                    window.location.reload();
+                                }
                         });
+            }
+
+            this.logoutUser = function(){
+                sessionStorage.clear();
+                window.location.reload();
             }
 
 

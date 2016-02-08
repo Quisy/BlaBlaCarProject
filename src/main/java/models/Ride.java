@@ -1,6 +1,7 @@
 package models;
 
 import javax.xml.bind.annotation.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class Ride {
     private final int seats;
 
     @XmlElement(name="user")
-    private List<User> users = null;
+    private List<String> users = new ArrayList<>();
 
 //    public static List<User> userss = new LinkedList<>();
 
@@ -47,7 +48,7 @@ public class Ride {
         this.owner = null;
         this.date = new Date();
         this.seats = 3;
-        this.users = null;
+        this.users = new ArrayList<>();
     }
 
     public Ride(int id, String from, String to, double price, User owner, Date date, int seats) {
@@ -64,7 +65,7 @@ public class Ride {
 //        userss.add(new User(1,"Mariusz","Lamprecht","ss@ss.pl","12345"));
 //        userss.add(new User(1,"Mariusz","Lamprecht","ss@ss.pl","12345"));
 
-        this.users = null;
+        this.users = new ArrayList<>();
     }
 
     public int getId() {
@@ -95,11 +96,11 @@ public class Ride {
         return seats;
     }
 
-    public List<User> getUsers() {
+    public List<String> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<String> users) {
         this.users = users;
     }
 }

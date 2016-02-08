@@ -2,7 +2,16 @@
 <DataBase>
     <User id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
     <User id="2" firstName="Mariusz" lastName="Lamprecht" email="123@123.pl" password="12345"/>
-    <Ride id="1" from="a" to="B" price="200.0" ownerID="1" date="2016-02-07T19:22:33.172+01:00" seats="3"/>
-    <Ride id="2" from="c" to="B" price="200.0" ownerID="1" date="2016-02-07T19:22:33.172+01:00" seats="1"/>
-    <Ride id="3" from="c" to="a" price="200.0" ownerID="1" date="2016-02-07T19:22:33.172+01:00" seats="2"/>
+    <Ride id="1" from="a" to="B" price="250.0" date="2016-02-08T19:58:32.238+01:00" seats="3">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+        <user>123@123.pl</user>
+    </Ride>
+    <Ride id="2" from="c" to="B" price="300.0" date="2016-02-08T19:58:32.238+01:00" seats="1">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+        <user>123@123.pl</user>
+    </Ride>
+    <Ride id="3" from="c" to="a" price="200.0" date="2016-02-08T19:58:32.238+01:00" seats="2">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
+        <user>123@123.pl</user>
+    </Ride>
 </DataBase>
