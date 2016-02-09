@@ -9,140 +9,216 @@
 
 <body>
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">BlaBlaCar</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <form id="panelLogin" class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control"
+                           data-bind="value: login, visible: isNotLogged" placeholder="Email">
+                    <input type="password" name="password" class="form-control"
+                           data-bind="value: password, visible: isNotLogged" placeholder="Hasło">
+                </div>
+                <span data-bind="visible: isLogged">Witaj </span>
+                <span data-bind="text: currentUserLogin, visible: isLogged"></span>
+                <button type="submit" class="btn btn-info" data-bind="click: loginUser, visible: isNotLogged">Zaloguj
                 </button>
-                <a class="navbar-brand" href="index.html">BlaBlaCar</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-                <form id="panelLogin" class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" data-bind="value: login, visible: isNotLogged" placeholder="Email">
-                        <input type="password" name="password" class="form-control" data-bind="value: password, visible: isNotLogged" placeholder="Hasło">
-                    </div>
-                    <span data-bind="visible: isLogged">Witaj </span>
-                    <span data-bind="text: currentUserLogin, visible: isLogged"></span>
-                    <button type="submit" class="btn btn-info" data-bind="click: loginUser, visible: isNotLogged">Zaloguj</button>
-                    <button type="submit" class="btn btn-info" data-bind="click: logoutUser, visible: isLogged">Wyloguj</button>
-                </form>
-            </div>
-            <!-- /.navbar-collapse -->
+                <button type="submit" class="btn btn-info" data-bind="click: logoutUser, visible: isLogged">Wyloguj
+                </button>
+            </form>
         </div>
-        <!-- /.container-fluid -->
-
-    </nav>
-
-
-
-    <div class="container" id="allRides">
-        <h2>Przejazdy</h2>
-
-        <div class="container" data-bind="visible: isLogged">
-            <p>Moje przejazdy</p>
-            <button type="submit" class="btn btn-info" data-bind="click: getUserRides">GetRides</button>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Od</th>
-                    <th>Do</th>
-                    <th>Data</th>
-                    <th>Cena</th>
-                    <th>Wolne miejsca</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody data-bind="foreach: userRides">
-                <tr>
-                    <td data-bind="text: from"></td>
-                    <td data-bind="text: to"></td>
-                    <td data-bind="text: date"></td>
-                    <td data-bind="text: price"></td>
-                    <td data-bind="text: freeSeats"></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-            <br/>
-            <p>Zamówione przejazdy</p>
-            <button type="submit" class="btn btn-info" data-bind="click: getAll">GetRides</button>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Od</th>
-                    <th>Do</th>
-                    <th>Właściciel</th>
-                    <th>Data</th>
-                    <th>Cena</th>
-                    <th>Wolne miejsca</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody data-bind="foreach: orderedRides">
-                <tr>
-                    <td data-bind="text: from"></td>
-                    <td data-bind="text: to"></td>
-                    <td>
-                        <p data-bind="with: owner">
-                            <span data-bind="text: firstName"> </span>  <span data-bind="text: lastName"> </span>
-                        </p>
-                    </td>
-                    <td data-bind="text: date"></td>
-                    <td data-bind="text: price"></td>
-                    <td data-bind="text: freeSeats"></td>
-                    <td><button type="submit" class="btn btn-info" data-bind="click: function(data){$root.leaveRide(data.id)}">Anuluj</button></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <p>Wszystkie przejazdy</p>
-        <div class="container">
-            <button type="submit" class="btn btn-info" data-bind="click: getAll">GetRides</button>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Od</th>
-                    <th>Do</th>
-                    <th>Właściciel</th>
-                    <th>Data</th>
-                    <th>Cena</th>
-                    <th>Wolne miejsca</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody data-bind="foreach: rides">
-                <tr>
-                    <td data-bind="text: from"></td>
-                    <td data-bind="text: to"></td>
-                    <td>
-                        <p data-bind="with: owner">
-                            <span data-bind="text: firstName"> </span>  <span data-bind="text: lastName"> </span>
-                        </p>
-                    </td>
-                    <td data-bind="text: date"></td>
-                    <td data-bind="text: price"></td>
-                    <td data-bind="text: freeSeats"></td>
-                    <td><button type="submit" class="btn btn-info" data-bind="click: function(data){$root.joinRide(data.id)}, visible: orderButtonVisible">Zamów miejsce</button></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
 
-    <script src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
-    <script src='js/knockout-3.4.0.js'></script>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="js/Authentication.js"></script>
-    <script src="js/RideViewModel.js"></script>
-    <script src="js/UserViewModel.js"></script>
+</nav>
+
+
+<div class="container" id="allRides">
+    <h2>Przejazdy</h2>
+    <button type="submit" class="btn btn-primary" onclick="window.location.reload();" data-bind="click: getAll">Odśwież</button>
+    <div class="container" data-bind="visible: isLogged">
+        <p>Moje przejazdy</p>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addRide">Dodaj przejazd</button>
+        <div id="addRide" class="collapse">
+            <div class="container">
+                <form data-bind="submit: addRide, with: newRide">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span>Od</span>
+                                    <input type="text" class="form-control" data-bind="value: from">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span>Do</span>
+                                    <input type="text" class="form-control" data-bind="value: to">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span>Data</span>
+                                    <input type="datetime-local" class="form-control" data-bind="value: date">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span>Cena</span>
+                                    <input type="number" class="form-control" data-bind="value: price">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span>Ilość miejsc</span>
+                                    <input type="number" class="form-control" data-bind="value: seats">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-info">Zapisz</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Od</th>
+                <th>Do</th>
+                <th>Data</th>
+                <th>Cena</th>
+                <th>Wolne miejsca</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: userRides">
+            <tr>
+                <td data-bind="text: from"></td>
+                <td data-bind="text: to"></td>
+                <td data-bind="text: date"></td>
+                <td data-bind="text: price"></td>
+                <td data-bind="text: freeSeats"></td>
+                <td>
+                    <button type="submit" class="btn btn-danger"
+                            data-bind="click: function(data){$root.deleteRide(data.id)}">Usuń
+                    </button>
+                </td>
+            </tr>
+            <!--<tr>-->
+                <!--<td colspan="5">-->
+                    <!--<div id="details">-->
+                        <!--<ul class="list-group" data-bind="foreach: users">-->
+                            <!--<li class="list-group-item">-->
+                                <!--<span data-bind="text: users"></span>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+        <br/>
+        <p>Zamówione przejazdy</p>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Od</th>
+                <th>Do</th>
+                <th>Właściciel</th>
+                <th>Data</th>
+                <th>Cena</th>
+                <th>Wolne miejsca</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: orderedRides">
+            <tr>
+                <td data-bind="text: from"></td>
+                <td data-bind="text: to"></td>
+                <td>
+                    <p data-bind="with: owner">
+                        <span data-bind="text: firstName"> </span> <span data-bind="text: lastName"> </span>
+                    </p>
+                </td>
+                <td data-bind="text: date"></td>
+                <td data-bind="text: price"></td>
+                <td data-bind="text: freeSeats"></td>
+                <td>
+                    <button type="submit" class="btn btn-danger"
+                            data-bind="click: function(data){$root.leaveRide(data.id)}">Anuluj
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Wszystkie przejazdy</p>
+    <div class="container">
+        Od:<input placeholder="Search…" type="search" data-bind="value: queryFrom, valueUpdate: 'keyup'" autocomplete="off">
+        Do:<input placeholder="Search…" type="search" data-bind="value: queryTo ,valueUpdate: 'keyup'" autocomplete="off">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Od</th>
+                <th>Do</th>
+                <th>Właściciel</th>
+                <th>Data</th>
+                <th>Cena</th>
+                <th>Wolne miejsca</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: rides">
+            <tr>
+                <td data-bind="text: from"></td>
+                <td data-bind="text: to"></td>
+                <td>
+                    <p data-bind="with: owner">
+                        <span data-bind="text: firstName"> </span> <span data-bind="text: lastName"> </span>
+                    </p>
+                </td>
+                <td data-bind="text: date"></td>
+                <td data-bind="text: price"></td>
+                <td data-bind="text: freeSeats"></td>
+                <td>
+                    <button type="submit" class="btn btn-info"
+                            data-bind="click: function(data){$root.joinRide(data.id)}, visible: orderButtonVisible">
+                        Zamów miejsce
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src='js/knockout-3.4.0.js'></script>
+<script src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
+<script src="js/Authentication.js"></script>
+<script src="js/RideViewModel.js"></script>
+<script src="js/UserViewModel.js"></script>
 
 
 </body>

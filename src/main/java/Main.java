@@ -9,7 +9,7 @@ import controllers.UserController;
 import repositories.RidesRepository;
 import repositories.UserRepository;
 
-import static spark.Spark.get;
+import static spark.Spark.*;
 import static spark.SparkBase.staticFileLocation;
 
 
@@ -39,6 +39,8 @@ public class Main {
         get("/rides/join/:id/:login", (request, response) -> ridesController.Join(request, response));
         get("/rides/leave/:id/:login", (request, response) -> ridesController.Leave(request, response));
         get("/rides/getOrdered/:login", (request, response) -> ridesController.GetOrdered(request, response));
+        post("/rides/add/:login", (request, response) -> ridesController.Add(request, response));
+        delete("/rides/delete/:id", (request, response) -> ridesController.Delete(request, response));
 
     }
 }

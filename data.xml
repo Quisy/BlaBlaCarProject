@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DataBase>
-    <User id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
-    <User id="2" firstName="Mariusz" lastName="Lamprecht" email="123@123.pl" password="12345"/>
-    <Ride id="1" from="a" to="B" price="250.0" date="2016-02-08T19:58:32.238+01:00" seats="3">
-        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
-        <user>123@123.pl</user>
+    <User id="1" firstName="Mariusz" lastName="Lamprecht" email="mar@lam.pl" password="12345"/>
+    <User id="2" firstName="Jan" lastName="Kowalski" email="jan@jan.pl" password="qwerty"/>
+    <Ride id="1" from="Warszawa" to="Poznań" price="100.0" date="2016-02-09T23:56:02.757+01:00" seats="2">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="mar@lam.pl" password="12345"/>
     </Ride>
-    <Ride id="2" from="c" to="B" price="300.0" date="2016-02-08T19:58:32.238+01:00" seats="1">
-        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
-        <user>123@123.pl</user>
+    <Ride id="2" from="Poznań" to="Wrocław" price="25.0" date="2016-02-09T23:56:02.757+01:00" seats="3">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="mar@lam.pl" password="12345"/>
     </Ride>
-    <Ride id="3" from="c" to="a" price="200.0" date="2016-02-08T19:58:32.238+01:00" seats="2">
-        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="ss@ss.pl" password="12345"/>
-        <user>123@123.pl</user>
+    <Ride id="3" from="Wrocław" to="Kraków" price="40.0" date="2016-02-09T23:56:02.757+01:00" seats="3">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="mar@lam.pl" password="12345"/>
+    </Ride>
+    <Ride id="4" from="Kraków" to="Warszawa" price="60.0" date="2016-02-09T23:56:02.757+01:00" seats="1">
+        <owner id="1" firstName="Mariusz" lastName="Lamprecht" email="mar@lam.pl" password="12345"/>
+    </Ride>
+    <Ride id="5" from="Wrocław" to="Kraków" price="50.0" date="2016-02-09T23:56:02.757+01:00" seats="3">
+        <owner id="2" firstName="Jan" lastName="Kowalski" email="jan@jan.pl" password="qwerty"/>
+        <user>mar@lam.pl</user>
+    </Ride>
+    <Ride id="6" from="Kraków" to="Gdańsk" price="100.0" date="2016-02-09T23:56:02.757+01:00" seats="2">
+        <owner id="2" firstName="Jan" lastName="Kowalski" email="jan@jan.pl" password="qwerty"/>
+        <user>mar@lam.pl</user>
     </Ride>
 </DataBase>

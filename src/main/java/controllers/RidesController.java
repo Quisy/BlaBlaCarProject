@@ -2,6 +2,7 @@ package controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.Ride;
 import repositories.RidesRepository;
 import spark.Request;
 import spark.Response;
@@ -53,5 +54,20 @@ public class RidesController {
     {
         String login = request.params(":login");
         return gson.toJson(_ridesRepository.GetOrderedRides(login));
+    }
+
+    public String Add(Request request, Response response)
+    {
+        String login = request.params(":login");
+        Ride ride = gson.fromJson(request.body(),Ride.class);
+        _ridesRepository.Add(ride,login);
+        return "Ok";
+    }
+
+    public String Delete(Request request, Response response)
+    {
+        long id = Long.parseLong(request.params(":id"));
+        _ridesRepository.Delete(id);
+        return "Ok";
     }
 }

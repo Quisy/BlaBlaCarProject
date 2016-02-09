@@ -14,7 +14,7 @@ import java.util.List;
 public class Ride {
 
     @XmlAttribute
-    private final int id;
+    private final long id;
 
     @XmlAttribute
     private final String from;
@@ -51,7 +51,7 @@ public class Ride {
         this.users = new ArrayList<>();
     }
 
-    public Ride(int id, String from, String to, double price, User owner, Date date, int seats) {
+    public Ride(long id, String from, String to, double price, User owner, Date date, int seats) {
         this.id = id;
         this.from = from;
         this.to = to;
@@ -68,7 +68,7 @@ public class Ride {
         this.users = new ArrayList<>();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

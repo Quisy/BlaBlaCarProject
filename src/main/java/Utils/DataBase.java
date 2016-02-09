@@ -45,8 +45,4 @@ public class DataBase {
         return this.rides;
     }
 
-    public void setUsers(List<User> users)
-    {
-        this.users = users;
-    }
 }
