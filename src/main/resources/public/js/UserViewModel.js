@@ -1,4 +1,5 @@
 const loginUrl = (login, password) => `/user/login/${login}/pw/${password}`;
+const registerUrl = (login, password) => `/user/register/${login}/pw/${password}`;
 
 
     function UserViewModel(){
@@ -21,6 +22,7 @@ const loginUrl = (login, password) => `/user/login/${login}/pw/${password}`;
                                 }
                         });
             }
+
 
             this.logoutUser = function(){
                 sessionStorage.clear();

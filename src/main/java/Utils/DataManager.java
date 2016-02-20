@@ -27,7 +27,7 @@ public class DataManager {
         }
     }
 
-    public static boolean save(DataBase db){
+    public synchronized static boolean save(DataBase db){
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(DataBase.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();

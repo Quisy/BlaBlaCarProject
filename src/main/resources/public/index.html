@@ -34,8 +34,7 @@
                 </div>
                 <span data-bind="visible: isLogged">Witaj </span>
                 <span data-bind="text: currentUserLogin, visible: isLogged"></span>
-                <button type="submit" class="btn btn-info" data-bind="click: loginUser, visible: isNotLogged">Zaloguj
-                </button>
+                <button type="submit" class="btn btn-info" data-bind="click: loginUser, visible: isNotLogged">Zaloguj</button>
                 <button type="submit" class="btn btn-info" data-bind="click: logoutUser, visible: isLogged">Wyloguj
                 </button>
             </form>
@@ -204,6 +203,9 @@
                             data-bind="click: function(data){$root.joinRide(data.id)}, visible: orderButtonVisible">
                         Zamów miejsce
                     </button>
+                    <strong data-bind="visible: isOrdered">Zamówione</strong>
+                    <br/>
+                    <strong data-bind="visible: isFull">Brak miejsc</strong>
                 </td>
             </tr>
             </tbody>
@@ -212,10 +214,10 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src='js/knockout-3.4.0.js'></script>
-<script src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
+<!--<script src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>-->
 <script src="js/Authentication.js"></script>
 <script src="js/RideViewModel.js"></script>
 <script src="js/UserViewModel.js"></script>

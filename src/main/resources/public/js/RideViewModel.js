@@ -21,8 +21,16 @@ const deleteRideUrl = (id) => `/rides/delete/${id}`;
             return (this.seats - this.users.length) + " / " + this.seats
         });
 
+        this.isFull = ko.computed(() => {
+            return  (this.seats - this.users.length) == 0;
+        });
+
         this.isNotFull = ko.computed(() => {
             return  (this.seats - this.users.length) > 0;
+        });
+
+        this.isOrdered = ko.computed(() => {
+            return this.users.filter(u => u == getLogin()).length > 0;
         });
 
         this.isNotOrdered = ko.computed(() => {

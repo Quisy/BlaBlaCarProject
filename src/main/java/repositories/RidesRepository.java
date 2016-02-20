@@ -19,12 +19,12 @@ public class RidesRepository extends BaseRepository {
     }
 
 
-    public List<Ride> GetAll()
+    public synchronized List<Ride> GetAll()
     {
-        return getDataBase().getRides();
+        return getDataBase().getRides().stream().collect(Collectors.toList());
     }
 
-    public List<Ride> GetByUser(String login)
+    public synchronized List<Ride> GetByUser(String login)
     {
         return getDataBase().getRides().stream().filter(r->r.getOwner().getEmail().equals(login)).collect(Collectors.toList());
     }
